@@ -20,13 +20,9 @@ public class Constants {
 
     public static final String FILE_NAME = "update.apk";
 
-    //public static final String SERVER_URL = "https://94.70.239.210:8443/logger/server/rest/log/";
+    public static final String SERVER_URL = "${hostname}/logger/server/rest/log/";
 
-    public static final String SERVER_URL = "https://83.212.84.123:8443/logger/server/rest/log/";
+    public static final String SERVER_USERNAME = "${user}";
 
-    //public static final String SERVER_URL = "https://192.168.1.5:8443/logger/server/rest/log/";
-
-    public static final String SERVER_USERNAME = "admin";
-
-    public static final String SERVER_PASSWORD = "12345678";
+    public static final String SERVER_PASSWORD = "${password}";
 }
