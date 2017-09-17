@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:i="http://www.rich.prime/jsf"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:n="http://ntua/facelets">
+	
+	<p:dialog id="locationPopup" header="#{bundle['select.location']}" widgetVar="locationPopup" modal="true" onShow="initMap();">
+       	<h:panelGrid columns="2" style="height:100%" columnClasses="none, locationFinderHeader">
+       	
+       		<div id="locMap" style="width: 800px; height: 600px"/>
+       		
+	       	<h:panelGrid id="locationFinderValues" columns="1" style="margin-left:10px; height:100%" 
+	       		columnClasses="locationFinderFixedHeight" rowClasses="none, none, none, none, none, none, none, locationFinderOkButton">
+	       		<p:outputLabel value="Center" style="font-weight:bold; "/>	
+	       		
+	        	<p:outputLabel value="#{bundle['log.details.latitude']}:" style="font-weight:bold; margin-left:5px;"/>
+	        	<h:outputLabel id="center_lat" style="margin-right:10px; margin-left:5px;"/>
+	        	<p:outputLabel value="#{bundle['log.details.longitude']}:" style="font-weight:bold; margin-left:5px;"/>
+	        	<h:outputLabel id="center_lon" style="margin-right:10px; margin-left:5px;"/>
+
+	        	<p:outputLabel value="#{bundle['log.details.radius']}" style="font-weight:bold; margin-top:10px"/>
+	        	
+	        	<h:outputLabel id="radius" value="#{mapController.searchCriteria.radius}"/>
+	        	
+	        	<p:commandButton id="ok_btn" style="float:right" value="#{bundle['ok.btn']}" update="map_search_panel" widgetVar="ok_loc_btn"
+					oncomplete="PF('locationPopup').hide();" process="center_lat_hidden,center_lon_hidden,radius_hidden" />
+	        	
+	        	<h:panelGroup>
+	        		<i class="fa fa-question-circle"/>
+	        		<h:outputText style="margin-left:5px" value="How to use" />
+	        		<br/>
+	        		<h:outputText value="#{bundle['select.location.info1']}" />
+	        		<br/>
+	        		<h:outputText value="#{bundle['select.location.info2']}" />
+	        	</h:panelGroup>
+	       	</h:panelGrid>
+	       	
+	       	<h:inputHidden id="center_lat_hidden" value="#{value.latitude}" />
+	       	<h:inputHidden id="center_lon_hidden" value="#{value.longitude}" />
+	       	<h:inputHidden id="radius_hidden" value="#{value.radius}" />
+
+      	</h:panelGrid>
+	</p:dialog>
+</ui:composition>

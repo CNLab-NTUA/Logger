@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:i="http://www.rich.prime/jsf"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:n="http://ntua/facelets">
+	
+	<p:dialog id="infoPopup" header="#{bundle['log.details.title']}" widgetVar="popup" showEffect="explode" 
+       	modal="true" hideEffect="explode">
+       	
+      		<p:panel header="#{bundle['basic.details']}" >
+      		
+      			<n:callSmsDirection log="#{value}"/>
+      			
+      			<h:panelGrid columns="2">
+
+
+		    	<n:twoLabels label="#{bundle['log.details.dateTime']}" value="#{value.dateTime}" date="true"/>
+		    	
+		    	<n:twoLabels label="#{bundle['log.details.duration']}" value="#{value.duration}"
+		    		rendered="#{value.logType == 'CALL'}"/>
+		    	
+		    	<n:twoLabels label="#{bundle['log.details.smsContent']}" value="#{value.smsContent}" text="true"
+		    		rendered="#{value.logType == 'SMS'}"/>
+		    </h:panelGrid>
+	    	
+    	</p:panel>
+    	
+    	<p:panel header="#{bundle['phone.details']}" >
+      			<h:panelGrid columns="2">
+      				<n:twoLabels label="#{bundle['log.details.brandModel']}" value="#{value.brandModel}"/>
+      			
+		    	<n:twoLabels label="#{bundle['log.details.version']}" value="#{value.version}"/>
+		    	
+		    	<n:twoLabels label="#{bundle['log.details.imei']} #{bundle['log.details.imei.det']}" value="#{value.imei}"/>
+		    	
+				<n:twoLabels label="#{bundle['log.details.imsi']} #{bundle['log.details.imsi.det']}" value="#{value.imsi}"/>
+	    	</h:panelGrid>
+    	</p:panel>
+    	
+    	<p:panel header="#{bundle['network.details']}" >
+      			<h:panelGrid columns="2">
+      				<n:twoLabels label="#{bundle['log.details.rat']} #{bundle['log.details.rat.det']}" value="#{value.rat}"/>
+      				
+		    	<n:twoLabels label="#{bundle['log.details.cellId']}" value="#{value.cellId}"/>
+		    	
+		    	<n:twoLabels label="#{bundle['log.details.lac']} #{bundle['log.details.lac.det']}" value="#{value.lac}"/>
+		    	
+		    	<n:twoLabels label="#{bundle['log.details.rssi']} #{bundle['log.details.rssi.det']}" value="#{value.rssi}"/>
+	    	</h:panelGrid>
+	    	<p:panel header="#{bundle['lte.details']}" >
+       			<h:panelGrid columns="2">
+       				<n:twoLabels label="#{bundle['log.details.lteRSRP']} #{bundle['log.details.lteRSRP.det']}" value="#{value.lteRSRP}"/>
+       			
+			    	<n:twoLabels label="#{bundle['log.details.lteRSRQ']} #{bundle['log.details.lteRSRQ.det']}" value="#{value.lteRSRQ}"/>
+			    	
+			    	<n:twoLabels label="#{bundle['log.details.lteRSSNR']} #{bundle['log.details.lteRSSNR.det']}" value="#{value.lteRSSNR}"/>
+			    	
+			    	<n:twoLabels label="#{bundle['log.details.lteCQI']} #{bundle['log.details.lteCQI.det']}" value="#{value.lteCQI}"/>
+		    	</h:panelGrid>
+	    	</p:panel>
+	    	
+    	</p:panel>
+	</p:dialog>
+</ui:composition>

@@ -1,0 +1,407 @@
+.map_panel_left {
+	width: 75%;
+	vertical-align: top;
+}
+
+.map_panel_right {
+	width: 25%;
+	vertical-align: top;
+}
+
+.ui-widget {
+   font-size: 14px !important;
+}
+
+.gm-style-iw {
+	top: 6px !important;
+	left: 25px !important;
+}
+
+.alignTop {
+	vertical-align: baseline;
+	padding-left: 10px;
+}
+
+.none {}
+
+.noTable {
+	border: 0 !important;
+	padding: 0 !important;
+}
+
+.noTableMarker {
+	border: 0 !important;
+	padding: 0 !important;
+	width: 20px;
+}
+
+.noTableButton {
+	border: 0 !important;
+	padding: 0 !important;
+	width: 50px;
+}
+
+.locationFinderHeader {
+	vertical-align: baseline;
+}
+
+.locationFinderFixedHeight {
+	vertical-align: baseline;
+	height:20px;
+}
+
+.locationFinderOkButton {
+	height: 100%;
+}
+
+.datatable-no-header thead {
+	display: none;
+}
+
+.ui-datalist-nobullets {
+	margin-top: 5px;
+	padding-left: 10px;
+	margin-bottom: 5px;
+}
+
+.logoStyle {
+	top: -25px;
+	position: absolute;
+	left: 20px;
+}
+
+.logoutStyle {
+	float:right !important; 
+	top:12px; 
+	color:lightgray;
+	right: 10px;
+}
+
+.ui-button, button.ui-button.ui-state-default, .ui-button.ui-state-default {
+    border: 1px solid #1f89ce;
+    color: #fff;
+    background: #2399e5;
+    -webkit-box-shadow: unset;
+	box-shadow: unset;
+}
+
+.ui-button, button.ui-button.ui-state-hover, .button.ui-button.ui-state-hover
+ button.ui-button.ui-state-focus, .button.ui-button.ui-state-focus {
+ 	border: 1px solid #156090;
+    outline: none;
+    background: #1f89ce;
+    -webkit-box-shadow: unset;
+	box-shadow: unset;
+ }
+ 
+ .ui-panel {
+    border: 0;
+    border-bottom: 3px solid #313b3f;
+}
+
+.ui-widget-header {
+	border: 0;
+	background: #313b3f;
+	color:white;
+	text-shadow: unset;
+}
+
+.ui-panel .ui-panel-titlebar-icon,
+.ui-panel .ui-panel-titlebar-icon:focus {
+	border: 1px solid #1f89ce;
+    color: #fff;
+    background: #2399e5;
+    -webkit-box-shadow: unset;
+	box-shadow: unset;
+}
+
+.ui-panel .ui-panel-titlebar-icon:hover {
+	border: 1px solid #156090;
+    outline: none;
+    background: #1f89ce;
+    -webkit-box-shadow: unset;
+	box-shadow: unset;
+}
+
+.ui-state-default .ui-icon {
+	background-image: url("/logger/server/javax.faces.resource/images/ui-icons_ffffff_256x240.png.xhtml?ln=primefaces-aristo");
+}
+
+.ui-datatable thead th {
+	border: 0 !important;
+	background: #313b3f;
+	color:white;
+	text-shadow: unset;
+}
+
+.ui-datatable tbody td {
+	border: 0 !important;
+}
+
+.ui-datatable tbody.ui-datatable-data{
+	border: 0 !important;
+}
+
+.ui-widget-content tr {
+	border: 0 !important;
+}
+
+.newstLogs>div>table {
+	border-bottom: 3px solid !important;
+}
+
+.ui-state-highlight, .ui-widget-content 
+.ui-state-highlight, .ui-widget-header 
+.ui-state-highlight {
+	text-shadow: none;
+	background: #4b647d;
+}
+
+.datatable-no-header>div>table {
+	border-bottom: 3px solid !important;
+}
+
+.mapArrayButton:hover {
+	border: 1px solid #156090 !important;
+    outline: none !important;
+    background: #1f89ce !important;
+    -webkit-box-shadow: unset !important;
+	box-shadow: unset !important;
+	color:white !important;
+}
+
+.datatable-no-header  .ui-widget-content .ui-state-hover {
+	box-shadow: none;
+	background: #64c5ff;
+	color:black;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	border: 0;
+    background: #2399e5;
+    -webkit-box-shadow: unset;
+	box-shadow: unset;
+	padding: 1px !important;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:hover {
+	border: 0;
+    background: #1f89ce;
+    -webkit-box-shadow: unset;
+	box-shadow: unset;
+}
+
+.ui-dialog .ui-dialog-titlebar-close span {
+	background-image: url("/logger/server/javax.faces.resource/images/ui-icons_ffffff_256x240.png.xhtml?ln=primefaces-aristo");
+}
+
+.ui-dialog .ui-dialog-titlebar-close span:hover {
+	background-image: url("/logger/server/javax.faces.resource/images/ui-icons_ffffff_256x240.png.xhtml?ln=primefaces-aristo");
+}
+
+.ui-selectonemenu .ui-selectonemenu-trigger {
+	border: 1px solid #1f89ce;
+    color: #fff;
+    background: #2399e5;
+    -webkit-box-shadow: unset;
+	box-shadow: unset;
+}
+
+.selectOne {
+	box-shadow: none !important;
+}
+
+.ui-selectonemenu-items-wrapper .ui-widget-content .ui-state-hover {
+	background: #64c5ff;
+	color:black;
+	box-shadow: none;
+}
+
+.ui-selectonemenu-items-wrapper .ui-widget-content .ui-state-highlight {
+	background: #4b647d;
+	color:white;
+	box-shadow: none;
+}
+
+.ui-datepicker {
+	padding:0 !important;
+}
+
+.ui-datepicker .ui-datepicker-header {
+	background: #313b3f;
+	color:white;
+	text-shadow: unset;
+}
+
+.ui-datepicker .ui-datepicker-next-hover {
+	box-shadow: none !important;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover {
+	box-shadow: none !important;
+}
+
+/* Menu */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {
+  width: auto;
+  border-bottom: 3px solid #2399e5;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+  padding-top:40px; 
+  background-color:#313b3f;
+}
+#cssmenu ul {
+  background: #313b3f;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 18px 25px 12px 25px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: lightgrey;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #2399e5;
+}
+
+/* Search criteria panel*/
+.searchPanel {
+	position:absolute; 
+	z-index:3; 
+	top: 90px; 
+	padding: 0; 
+	width:99.5%
+}
+
+.resultPanel {
+	margin-top: 40px;
+	z-index: 1;
+}
+
+
+/* Diagram */
+
+.ui-diagram-element {   
+    width:auto;
+    padding-right:10px; 
+    padding-left:10px; 
+    height:2em;      
+    line-height:2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background-color: #2399e5;
+    color: #ffffff;
+    z-index:2; 
+}
+
+.diagramElementSelected {
+	background-color: red;
+}
+
+/* Login page */
+.loginPanel {
+	position:fixed; 
+	top:35%; 
+	left:40%;
+}
+
+.loginRight {
+	padding-left: 15px;
+}
+
+.loginGrid {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* Language */
+
+.language {
+	position: relative;
+	z-index: 1;
+	float: right;
+	color: lightgrey;
+	top: 10px;
+	margin-right: 10px;
+}
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ntua.ote.logger.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <include layout="@layout/phone_details" />
+
+    <ToggleButton
+        android:id="@+id/launch_btn"
+        android:textOff="Launch"
+        android:textOn="Stop"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:onClick="onLogStart"
+        android:layout_gravity="center_horizontal" />
+
+    <include layout="@layout/statistics" />
+
+    <TextView
+        android:id="@+id/LatestLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+<!--    <Button
+        android:text="Test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="refresh"/>-->
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

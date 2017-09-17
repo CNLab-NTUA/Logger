@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:n="http://ntua/facelets"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+<ui:composition template="/templates/super.xhtml">
+	<ui:define name="menu">
+		<div id="menu_wrapper">
+			<div id="cssmenu" style="height:89px;">
+				<ul>
+					<h:commandLink id="btn_0" action="home" styleClass="logoStyle"
+						actionListener="#{menuController.listener}">
+						<h:graphicImage name="logo.png" library="images"/>
+					</h:commandLink>
+				</ul>
+			</div>
+		</div>
+	</ui:define>
+	<ui:define name="content">
+		
+		<p:panel styleClass="loginPanel" header="#{bundle['welcome.message']}">
+			<p:messages/>
+			<h:panelGrid columns="2" columnClasses="none,loginRight" styleClass="loginGrid">
+				<n:input label="#{bundle['login.username']} " value="#{loginController.userName}"/>
+				
+				<h:outputText value="#{bundle['login.password']}" />
+        		<p:password id="nonFeedback" value="#{loginController.password}" />
+			</h:panelGrid>		
+			
+			<p:commandButton value="#{bundle['login.btn']}" ajax="false" action="#{loginController.login()}" 
+				icon="fa fa-sign-in"/>
+		</p:panel>
+	</ui:define>
+</ui:composition>
+</html>

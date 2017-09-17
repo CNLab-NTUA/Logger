@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE facelet-taglib PUBLIC
+  "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+  "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+<facelet-taglib>
+	<namespace>http://ntua/facelets</namespace>
+	<tag>
+		<tag-name>input</tag-name>
+		<source>../components/input.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>calendar</tag-name>
+		<source>../components/calendar.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>selectOne</tag-name>
+		<source>../components/selectOne.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>twoLabels</tag-name>
+		<source>../components/twoLabels.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>callSmsDirection</tag-name>
+		<source>../components/callSmsDirection.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>logInfoPopup</tag-name>
+		<source>../components/logInfoPopup.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>locationFinderPopup</tag-name>
+		<source>../components/locationFinderPopup.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>manyInputSelect</tag-name>
+		<source>../components/manyInputSelect.xhtml</source>
+	</tag>
+	
+	<function>
+		<function-name>optionalRequiredValidator</function-name>
+		<function-class>com.ntua.ote.logger.web.common.FacesUtil</function-class>
+		<function-signature>boolean optionalRequiredValidator()</function-signature>
+	</function>
+</facelet-taglib>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+<f:view locale="#{localeManager.locale}"> 
+
+	<h:outputStylesheet library="css" name="style.css"  />
+<h:head>
+  <title>#{bundle['page.title']}</title>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <h:outputStylesheet library="css" name="style.css" />
+  <ui:insert name="head"></ui:insert>
+  <h:outputScript library="js" name="common.js" />
+</h:head>
+
+<h:body style="margin:0;">
+  <div id="main">
+    <h:form id="contentForm">
+	<div class="language">
+		<h:outputLabel value="#{bundle['language.label']}:" />
+		<h:commandLink id="en_lang" action="#{localeManager.setLanguage('en')}" >
+			<h:graphicImage library="images" name="lang_en.png" style="border:none"/>
+		</h:commandLink>
+		<p:spacer width="10"/>
+		<h:commandLink id="el_lang" action="#{localeManager.setLanguage('el')}" >
+			<h:graphicImage library="images" name="lang_gr.gif" style="border:none"/>
+		</h:commandLink>
+	</div>
+    <ui:insert name="menu">
+    	<ui:include src="/templates/menu.xhtml" />
+    </ui:insert>
+    <div id="site_content">
+      <div id="content" style="width:100%">
+      	<ui:insert name="content"></ui:insert>
+        <!-- insert the page content here -->
+      </div>
+    </div>
+    </h:form>
+    <div id="content_footer"></div>
+    <div id="footer" style="position: fixed; background: white; width: 100%; padding-bottom: 5px; bottom: 0px; padding-left: 5px;">
+      #{bundle['footer.message']}  #{maven.project.version}
+    </div>
+  </div>
+</h:body>
+</f:view>
+</html>

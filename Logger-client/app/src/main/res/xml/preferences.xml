@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pref_runOnStart"
+        android:title="@string/runStart"
+        android:summary="@string/runStart_summary"
+        android:defaultValue="false"/>
+
+    <CheckBoxPreference
+        android:key="pref_keepScreenOn"
+        android:title="@string/keepScreenOn"
+        android:summary="@string/keepScreenOn_summary"
+        android:defaultValue="false"/>
+
+    <PreferenceCategory android:title="@string/upload_settings">
+
+        <CheckBoxPreference
+            android:key="pref_wifiData"
+            android:title="@string/use_wifi_data"
+            android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            android:key="pref_wifi"
+
+            android:title="@string/use_wifi"
+            android:defaultValue="false"/>
+
+        <CheckBoxPreference
+            android:key="pref_data"
+            android:title="@string/use_data"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/update">
+
+        <Preference android:title="@string/check_for_update"
+            android:key="pref_update"
+            android:summary="@string/current_version"/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

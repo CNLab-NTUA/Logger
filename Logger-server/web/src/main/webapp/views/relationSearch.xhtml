@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:n="http://ntua/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/super.xhtml">
+	
+	<ui:define name="head">
+        <script type="text/javascript">
+			$(document).on('dblclick',
+		        '.ui-diagram > .ui-diagram-element',
+		        function(info) {
+		            elementClicked([ {
+		                name : 'elementId',
+		                value : info.target.id
+		            } ]);
+		        });
+			$(document).on('click','.searchPanel > .ui-panel-titlebar',
+		        function(info) {
+					if(info.target.className.indexOf('ui-icon') == -1) {	        
+						PF('panel').toggle()
+					}
+				});
+		</script>
+    </ui:define>
+    
+
+	<ui:define name="content">
+
+		<p:panel id="relation_search_panel" toggleSpeed="500" toggleable="true" widgetVar="panel" 
+			styleClass="searchPanel" header="#{bundle['search.criteria.title']}">
+			<p:messages />
+			<h:panelGrid columns="3" id="criteria">
+				<h:panelGrid columns="2">
+					
+					<n:input label="#{bundle['log.details.phoneNumber']}" required="true"
+						value="#{relationFinderController.searchCriteria.phoneNumber}">
+						<ui:define name="extra">
+							<p:ajax event="change" update="criteria"/>
+						</ui:define>
+					</n:input>
+					
+					<n:input label="#{bundle['search.criteria.other.phone']}" 
+						disabled="#{empty relationFinderController.searchCriteria.phoneNumber}"
+						value="#{relationFinderController.searchCriteria.externalPhoneNumber}"/>
+									
+				</h:panelGrid>
+				
+				<h:panelGrid columns="2">
+					
+					<n:calendar label="#{bundle['search.criteria.date.from']}" value="#{relationFinderController.searchCriteria.dateFrom}"
+						type="dateTime" />
+					
+					<n:calendar label="#{bundle['search.criteria.date.to']}" value="#{relationFinderController.searchCriteria.dateTo}"
+						type="dateTime"/>
+				
+				</h:panelGrid>
+				
+			</h:panelGrid>
+			<p:commandButton id="doValidateAndSearch" value="#{bundle['search.btn']}" update="@form afterLoad"
+				action="#{relationFinderController.search()}" oncomplete="toggle(args &amp;&amp; !args.validationFailed)"
+				icon="fa fa-fw fa-search" />
+			<h:panelGroup id="afterLoad">
+			    <h:outputScript>
+			        function toggle(validationFailed) {    
+			            if (!#{relationFinderController.error} &amp;&amp; validationFailed){
+			            	PF('panel').toggle()
+			            }
+			        }
+			    </h:outputScript>
+			</h:panelGroup>
+			<p:commandButton value="#{bundle['reset.btn']}" update="relation_search_panel relation_results_panel"
+				action="#{relationFinderController.reset()}" icon="fa fa-fw fa-remove"/>
+				
+		</p:panel>
+		
+		<h:panelGrid id="relation_results_panel" columns="1" styleClass="resultPanel"
+			columnClasses="map_panel_left" width="100%">
+			
+			<p:diagram id="relationDiagram" value="#{relationFinderController.model}" style="border:0; height:80vh;" 
+				styleClass="ui-widget-content" rendered="#{not empty relationFinderController.model}" />
+		    
+		    <p:remoteCommand name="elementClicked" update="relation_results_panel"
+                actionListener="#{relationFinderController.onElementClicked}"/>
+                
+            
+	    </h:panelGrid>
+        
+	</ui:define>
+</ui:composition>
+</html>

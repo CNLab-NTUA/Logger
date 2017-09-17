@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:n="http://ntua/facelets"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+	<div id="menu_wrapper">
+		<div id="cssmenu">
+			<ul>
+				<h:commandLink id="btn_0" action="home" styleClass="logoStyle"
+					actionListener="#{menuController.listener}">
+					<h:graphicImage name="logo.png" library="images"/>
+				</h:commandLink>
+				<li class="#{menuController.menuEntries[1]}" style="margin-left:150px">
+					<h:commandLink id="btn_1" action="#{mapController.init()}" value="#{bundle['menu.map.search']}" 
+						actionListener="#{menuController.listener}"/>
+				</li>
+				<li class="#{menuController.menuEntries[2]}">
+					<h:commandLink id="btn_2" action="#{mapPathController.init()}" value="#{bundle['menu.map.path.search']}" 
+						actionListener="#{menuController.listener}"/>
+				</li>
+				<li class="#{menuController.menuEntries[3]}">
+					<h:commandLink id="btn_3" action="#{relationFinderController.init()}" value="#{bundle['menu.relation.finder']}" 
+						actionListener="#{menuController.listener}"/>
+				</li>
+				<li class="logoutStyle">
+					<p:outputLabel value="#{bundle['menu.user']}: #{userSessionBean.userName}" style="margin-right:20px"/>
+					<p:commandButton value="#{bundle['logout.btn']}" ajax="false" action="#{loginController.logout()}" 
+						icon="fa fa-sign-out" />
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+
+</ui:composition>
